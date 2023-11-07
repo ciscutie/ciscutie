@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap');
+
+#root {
+  margin: 1px 1px 0 1px;
+  padding: 1px 1px 0 1px;
+}
+
+/*auto slider animation infinite*/
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.logos {
+  overflow: hidden;
+  padding: 60px 0;
+  position: relative;
+}
+
+.logos:before {
+  background: linear-gradient(to left, rgb(255, 255, 255, 0), white);
+  left: 0;
+}
+.logos:after {
+  background: linear-gradient(to right, rgb(255, 255, 255, 0), white);
+  right: 0;
+}
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  z-index: 2;
+}
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+.logos-slide {
+  display: inline-block;
+  animation: 20s slide infinite linear;
+}
+.logos-slide img {
+  height: 170px;
+  margin: 0 10.2px;
+}
